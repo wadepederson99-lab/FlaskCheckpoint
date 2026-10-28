@@ -20,17 +20,17 @@ def seasons():
     return render_template('seasons.html', now=now, year=current_year, month=current_month)
 
 # New Page 1: Minnesota Wild Players Page
-@app.route('/birds')
-def birds():
+@app.route('/players')
+def player():
     my_favorite = "Kirill Kaprizov"
-    bird_list = [
+    player_list = [
         "Kirill Kaprizov",
         "Matt Boldy",
         "Joel Eriksson Ek",
         "Brock Faber",
         "Marc-Andre Fleury"
     ]
-    return render_template('players.html', favorite=my_favorite, birds=bird_list)
+    return render_template('players.html', favorite=my_favorite, players=player_list)
 
 # New Page 2: Minnesota Wild Facts Page
 @app.route('/facts')
