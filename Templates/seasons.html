@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Minnesota Wild Hockey Season</h1>
+
+    <p>The current year is {{ year }}</p>
+    <p>The current month is {{ month }}</p>
+
+    {% if month in ["March", "April", "May"] %}
+        <p>It’s Spring! The Stanley Cup Playoff race is heating up for the Wild! 🏒</p>
+    {% elif month in ["June", "July", "August"] %}
+        <p>It’s Summer! NHL Draft and offseason training for the Wild! ☀️</p>
+    {% elif month in ["September", "October", "November"] %}
+        <p>It’s Fall! Training camp and the start of the NHL season at Xcel Energy Center! 🍂</p>
+    {% else %}
+        <p>It’s Winter! Prime hockey weather in the State of Hockey! ❄️</p>
+    {% endif %}
+
+    <div class="navigation">
+        <p><a href="{{ url_for('birds') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}

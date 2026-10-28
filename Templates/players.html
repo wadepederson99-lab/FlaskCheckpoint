@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>My Favorite Minnesota Wild Players</h1>
+    
+    <p>My all-time favorite player is <strong>{{ favorite }}</strong>!</p>
+
+    <h2>Star Players:</h2>
+    <ul>
+        {% for bird in birds %}
+            <li>{{ bird }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check out the Seasons page!</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}

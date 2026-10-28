@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Fun Minnesota Wild Facts</h1>
+
+    <img src="{{ url_for('static', filename='Images/wild_logo.jpg') }}"
+         alt="Minnesota Wild Logo" class="bird-image">
+
+    <p><strong>Featured Fact:</strong> {{ featured_fact }}</p>
+    <p><strong>Fastest Shot Speed:</strong> {{ speed }}</p>
+
+    <h2>More Awesome Facts:</h2>
+    <ul>
+        {% for fact in facts %}
+            <li>{{ fact }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('birds') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check out the Seasons page!</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}
+

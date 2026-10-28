@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minnesota Wild</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Minnesota Wild</h1>
+        
+        <img src="{{ url_for('static', filename='Images/images.jpg') }}"
+            alt="Minnesota Wild" class="bird-image">
+        
+        <h2>Basic Information</h2>
+        <p><strong>League & Conference:</strong> NHL — Western Conference (Central Division)</p>
+        <p><strong>Home Arena:</strong> Xcel Energy Center (Saint Paul, Minnesota)</p>
+        <p><strong>Team Colors:</strong> Forest Green, Iron Range Red, Harvest Gold, and Minnesota Wheat</p>
+
+        <div class="navigation">
+            <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+            <p><a href="{{ url_for('birds') }}">Check out the Wild Players!</a></p>
+            <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+            <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
+        </div>
+    </div>
+</body>
+</html>
