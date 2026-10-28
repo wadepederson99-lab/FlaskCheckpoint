@@ -21,7 +21,7 @@ def seasons():
 
 # New Page 1: Minnesota Wild Players Page
 @app.route('/players')
-def player():
+def players():
     my_favorite = "Kirill Kaprizov"
     player_list = [
         "Kirill Kaprizov",

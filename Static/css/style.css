@@ -27,7 +27,9 @@ ul {
     line-height: 1.8;
 }
 
-.bird-image {
+.bird-image,
+.wildlogo-image,
+.player-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
