@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Trivia & Fact Submission Received!</h1>
+
+    <div class="survey-results">
+        <h2>Trivia Profile: {{ fan_name }} 🏒</h2>
+        <p><strong>Wild Knowledge Rating:</strong> {{ knowledge_level }}</p>
+        <p><strong>Knew about Nordy's #18,001:</strong> {{ know_nordy }}</p>
+        <p><strong>Submitted Fact / Trivia:</strong> {{ submitted_fact }}</p>
+        <p><a href="{{ url_for('facts') }}" class="btn">Back to Facts Page</a></p>
+    </div>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('facts') }}">Back to Facts Page</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}
+

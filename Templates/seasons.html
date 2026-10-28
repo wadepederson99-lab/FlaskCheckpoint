@@ -16,9 +16,38 @@
         <p>It’s Winter! Prime hockey weather in the State of Hockey! ❄️</p>
     {% endif %}
 
+    <h2>Wild Season & Playoff Survey</h2>
+    <p>Give us your predictions and hockey season preferences:</p>
+
+    <form method="POST" action="{{ url_for('seasons_results') }}" class="survey-form">
+        <div class="form-group">
+            <label for="fan_name">Your Name:</label>
+            <input type="text" id="fan_name" name="fan_name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="favorite_season">Favorite Part of the Hockey Year:</label>
+            <select id="favorite_season" name="favorite_season" required>
+                <option value="" disabled selected>Select a season</option>
+                <option value="Fall (Season Opener & Training Camp)">Fall (Season Opener & Training Camp)</option>
+                <option value="Winter (Prime Hockey Weather & Outdoor Rinks)">Winter (Prime Hockey Weather & Outdoor Rinks)</option>
+                <option value="Spring (Stanley Cup Playoff Push)">Spring (Stanley Cup Playoff Push)</option>
+                <option value="Summer (NHL Draft & Offseason Moves)">Summer (NHL Draft & Offseason Moves)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="playoff_prediction">Your Season & Playoff Prediction:</label>
+            <textarea id="playoff_prediction" name="playoff_prediction" rows="3" placeholder="How far will the Wild go this year?" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Prediction</button>
+    </form>
+
     <div class="navigation">
         <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
         <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
         <p><a href="{{ url_for('index') }}">Back to Home</a></p>
     </div>
 </div>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Player Vote Submitted!</h1>
+
+    <div class="survey-results">
+        <h2>{{ fan_name }}'s Favorite Player Choice 🏒</h2>
+        <p><strong>Selected Player:</strong> {{ favorite_player }}</p>
+        <p><strong>Position:</strong> {{ position }}</p>
+        <p><strong>Reason:</strong> {{ reason }}</p>
+        <p><a href="{{ url_for('players') }}" class="btn">Back to Players Page</a></p>
+    </div>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('players') }}">Back to Players Page</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,22 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Minnesota Wild</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>About the Minnesota Wild</h1>
-        <p>The Minnesota Wild are a professional ice hockey team based in Saint Paul, Minnesota. Founded in 1997 and beginning play in the 2000–01 season, the Wild compete in the National Hockey League (NHL) as a member of the Central Division in the Western Conference, playing their home games at Xcel Energy Center.</p>
-        
-        <div class="navigation">
-            <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
-            <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
-            <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
-            <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>About the Minnesota Wild</h1>
+    <p>The Minnesota Wild are a professional ice hockey team based in Saint Paul, Minnesota. Founded in 1997 and beginning play in the 2000–01 season, the Wild compete in the National Hockey League (NHL) as a member of the Central Division in the Western Conference, playing their home games at Xcel Energy Center.</p>
+
+    <h2>Xcel Energy Center Fan Experience Survey</h2>
+    <p>Share your experiences visiting the home arena or watching the Wild:</p>
+
+    <form method="POST" action="{{ url_for('about_results') }}" class="survey-form">
+        <div class="form-group">
+            <label for="visitor_name">Your Name:</label>
+            <input type="text" id="visitor_name" name="visitor_name" placeholder="Enter your name" required>
         </div>
+
+        <div class="form-group">
+            <label>Have you ever attended a game at Xcel Energy Center?</label>
+            <div class="radio-options">
+                <label><input type="radio" name="attended" value="Yes, in person!" required> Yes, in person!</label>
+                <label><input type="radio" name="attended" value="Not yet, but on my bucket list!"> Not yet, but on my bucket list!</label>
+                <label><input type="radio" name="attended" value="Watch exclusively on TV"> Watch on TV</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="favorite_memory">What is your favorite memory or tradition at a Wild game?</label>
+            <textarea id="favorite_memory" name="favorite_memory" rows="3" placeholder="e.g. The foghorn sounding after a goal!" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Experience</button>
+    </form>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

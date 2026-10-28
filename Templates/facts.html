@@ -17,11 +17,46 @@
         {% endfor %}
     </ul>
 
+    <h2>Wild Trivia & Fact Submission Survey</h2>
+    <p>Test your hockey knowledge and share a Wild fact with us:</p>
+
+    <form method="POST" action="{{ url_for('facts_results') }}" class="survey-form">
+        <div class="form-group">
+            <label for="fan_name">Your Name:</label>
+            <input type="text" id="fan_name" name="fan_name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Did you already know that Nordy wears jersey #18,001?</label>
+            <div class="radio-options">
+                <label><input type="radio" name="know_nordy" value="Yes, of course!" required> Yes, of course!</label>
+                <label><input type="radio" name="know_nordy" value="No, that's news to me!"> No, that's news to me!</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="knowledge_level">Rate Your Wild Knowledge Level:</label>
+            <select id="knowledge_level" name="knowledge_level" required>
+                <option value="" disabled selected>Select level</option>
+                <option value="Rookie Fan">Rookie Fan</option>
+                <option value="Diehard Fan">Diehard Fan</option>
+                <option value="State of Hockey Legend">State of Hockey Legend</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="submitted_fact">Share a Wild Fact or Trivia Question:</label>
+            <textarea id="submitted_fact" name="submitted_fact" rows="3" placeholder="Enter your favorite Wild trivia or fun fact..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Fact Survey</button>
+    </form>
+
     <div class="navigation">
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
         <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
-        <p><a href="{{ url_for('seasons') }}">Check out the Seasons page!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
         <p><a href="{{ url_for('index') }}">Back to Home</a></p>
     </div>
 </div>
 {% endblock %}
-

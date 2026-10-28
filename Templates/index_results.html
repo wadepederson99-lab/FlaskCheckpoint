@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Fan Club Registration Confirmed!</h1>
+
+    <div class="survey-results">
+        <h2>Welcome to the Team of 18,000, {{ fan_name }}! 🏒</h2>
+        <p><strong>Years following the Wild:</strong> {{ years_fan }} year(s)</p>
+        <p><strong>Favorite Team Color:</strong> {{ favorite_color }}</p>
+        <p><a href="{{ url_for('index') }}" class="btn">Back to Home Form</a></p>
+    </div>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
+    </div>
+</div>
+{% endblock %}
+

@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>        
-    <div class="navigation">
-            <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
-            <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
-            <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
-            <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
-        </div>
 {% block content %}
 {% endblock %}
 </body>

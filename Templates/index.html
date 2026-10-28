@@ -1,30 +1,50 @@
-{%extends "base.html"%}
-{%block content%}
+{% extends "base.html" %}
 
+{% block content %}
+<div class="container">
+    <h1>Minnesota Wild</h1>
+    
+    <img src="{{ url_for('static', filename='Images/images.jpg') }}"
+        alt="Minnesota Wild" class="bird-image">
+    
+    <h2>Basic Information</h2>
+    <p><strong>League & Conference:</strong> NHL — Western Conference (Central Division)</p>
+    <p><strong>Home Arena:</strong> Xcel Energy Center (Saint Paul, Minnesota)</p>
+    <p><strong>Team Colors:</strong> Forest Green, Iron Range Red, Harvest Gold, and Minnesota Wheat</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minnesota Wild</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Minnesota Wild</h1>
-        
-        <img src="{{ url_for('static', filename='Images/images.jpg') }}"
-            alt="Minnesota Wild" class="bird-image">
-        
-        <h2>Basic Information</h2>
-        <p><strong>League & Conference:</strong> NHL — Western Conference (Central Division)</p>
-        <p><strong>Home Arena:</strong> Xcel Energy Center (Saint Paul, Minnesota)</p>
-        <p><strong>Team Colors:</strong> Forest Green, Iron Range Red, Harvest Gold, and Minnesota Wheat</p>
+    <h2>Wild Fan Club Survey</h2>
+    <p>Join the Team of 18,000! Tell us about your fandom below:</p>
 
+    <form method="POST" action="{{ url_for('index_results') }}" class="survey-form">
+        <div class="form-group">
+            <label for="fan_name">Your Name:</label>
+            <input type="text" id="fan_name" name="fan_name" placeholder="Enter your name" required>
+        </div>
 
+        <div class="form-group">
+            <label for="years_fan">How many years have you been following the Wild?</label>
+            <input type="number" id="years_fan" name="years_fan" min="0" max="30" placeholder="e.g. 5" required>
+        </div>
+
+        <div class="form-group">
+            <label for="favorite_color">Favorite Wild Team Color:</label>
+            <select id="favorite_color" name="favorite_color" required>
+                <option value="" disabled selected>Choose a color</option>
+                <option value="Forest Green">Forest Green</option>
+                <option value="Iron Range Red">Iron Range Red</option>
+                <option value="Harvest Gold">Harvest Gold</option>
+                <option value="Minnesota Wheat">Minnesota Wheat</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Fan Profile</button>
+    </form>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('about') }}">Learn about the Minnesota Wild</a></p>
     </div>
-</body>
-</html>
-
-{%endblock content%}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Thank You for Sharing Your Experience!</h1>
+
+    <div class="survey-results">
+        <h2>Fan Experience Record: {{ visitor_name }}</h2>
+        <p><strong>Xcel Energy Center Attendance:</strong> {{ attended }}</p>
+        <p><strong>Favorite Memory / Tradition:</strong> {{ favorite_memory }}</p>
+        <p><a href="{{ url_for('about') }}" class="btn">Back to About Page</a></p>
+    </div>
+
+    <div class="navigation">
+        <p><a href="{{ url_for('about') }}">Back to About Page</a></p>
+        <p><a href="{{ url_for('seasons') }}">Check the Current Season</a></p>
+        <p><a href="{{ url_for('players') }}">Check out the Wild Players!</a></p>
+        <p><a href="{{ url_for('facts') }}">Check out my Wild Facts page!</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}
+
